@@ -1,3 +1,75 @@
 <resources>
     <string name="app_name">PneuX</string>
+    <string name="id">PneuX 2022</string>
+
+    <!-- OnBoarding -->
+    <string name="PneuX">PneuX</string>
+    <string name="desc">First prediction of pneumonia based on rontgen picture</string>
+
+    <!-- Login. -->
+    <string name="klik">Klik disini</string>
+    <string name="welcome">Selamat Datang Kembali</string>
+    <string name="created">Buat Akun</string>
+    <string name="login">Masuk</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="regis">Daftar Akun</string>
+    <string name="akun">Belum Punya Akun?</string>
+
+    <!-- Register -->
+    <string name="hai">Selamat Datang</string>
+    <string name="akun2">Sudah Punya Akun?</string>
+    <string name="username">Username</string>
+    <string name="register">Daftar</string>
+
+    <!-- Home -->
+    <string name="Hello">Hello,</string>
+    <string name="user">Username</string>
+    <string name="welcomeUser">Selamat datang di PneuX</string>
+    <string name="news">Baca Berita Seputar Pneumonia di sini</string>
+    <string name="health">Jaga kesehatanmu jangan lupa untuk berolahraga dan perbanyak minum air putih!!</string>
+    <string name="breaking">Berita Pneumonia</string>
+    <string name="rs">Rumah sakit terdekat</string>
+    <string name="cek">Nama Rumah Sakit</string>
+    <string name="street">Alamat Rumah Sakit</string>
+    <string name="rute">Rute Perjalanan</string>
+    <string name="time">Jam buka</string>
+    <string name="scan">Scan</string>
+    <string name="Rs">Rumah sakit pneumonia</string>
+
+
+    <!-- hospital -->
+
+    <!-- history -->
+    <string name="date">Tanggal Scan Rontgen</string>
+    <string name="output">Hasil</string>
+
+    <!-- result-->
+
+    <!-- account -->
+    <string name="settings">Pengaturan</string>
+    <string name="themes">Tema</string>
+    <string name="log">Keluar</string>
+
+    <!-- Navigation -->
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_history">Riwayat</string>
+    <string name="title_upload">Kirim gambar</string>
+    <string name="title_hospital">Rumah Sakit</string>
+    <string name="title_account">Akun</string>
+    <string name="title_scan">Scan</string>
+
+    <!--Description-->
+    <string name="shape">shape</string>
+    <string name="picture">Ini adalah gambar</string>
+    <string name="logo">Ini adalah logo</string>
+    <string name="back">Ini adalah tombol back</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="icon">Ini adalah icon</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

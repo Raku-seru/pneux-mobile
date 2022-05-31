@@ -5,6 +5,16 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#CC000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="blueblack">#244982</color>
+    <color name="shadow">#40000000</color>
+    <color name="button">#006C84</color>
+    <color name="background">#6EB5CD</color>
+    <color name="lightBlue">#2196F3</color>
+    <color name="button2">#1A405F</color>
+    <color name="bwhite">#9FCCF0</color>
+    <color name="blackbu">#2E3245</color>
+    <color name="shape">#B7C0D9</color>
 </resources>
