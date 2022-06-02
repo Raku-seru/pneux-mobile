@@ -1,3 +1,101 @@
 <resources>
     <string name="app_name">PneuX</string>
+    <string name="id">PneuX 2022</string>
+
+    <!-- OnBoarding -->
+    <string name="PneuX">PneuX</string>
+    <string name="desc">First prediction of pneumonia based on rontgen picture</string>
+
+    <!-- Login. -->
+    <string name="klik">Klik disini</string>
+    <string name="welcome">Selamat Datang Kembali</string>
+    <string name="created">Buat Akun</string>
+    <string name="login">Masuk</string>
+    <string name="email">Email</string>
+    <string name="password">kata sandi</string>
+    <string name="regis">Daftar Akun</string>
+    <string name="akun">Belum Punya Akun?</string>
+    <string name="forget">Lupa Kata Sandi?</string>
+    <string name="gmail">Masukkan Email anda</string>
+    <string name="new_password">Masukkan kata sandi Baru</string>
+    <string name="req">Masukkan email anda yang terdaftar pada aplikasi ini</string>
+    <string name="relog">Masuk</string>
+    <string name="get">Selanjutnya</string>
+    <string name="app">Tentang aplikasi</string>
+    <string name="create">Buat Password Baru</string>
+    <string name="privasi">Privasi</string>
+
+
+    <!-- Register -->
+    <string name="hai">Selamat Datang</string>
+    <string name="akun2">Sudah Punya Akun?</string>
+    <string name="username">Username</string>
+    <string name="register">Daftar</string>
+
+    <!-- Home -->
+    <string name="Hello">Hello,</string>
+    <string name="user">Username</string>
+    <string name="welcomeUser">Selamat datang di PneuX</string>
+    <string name="news">Baca Berita Seputar Pneumonia di sini</string>
+    <string name="health">Jaga kesehatanmu jangan lupa untuk berolahraga dan perbanyak minum air putih!!</string>
+    <string name="breaking">Berita Pneumonia</string>
+    <string name="rs">Rumah sakit terdekat</string>
+    <string name="cek">Nama Rumah Sakit</string>
+    <string name="street">Alamat Rumah Sakit</string>
+    <string name="rute">Rute Perjalanan</string>
+    <string name="time">Jam buka</string>
+    <string name="scan">Scan</string>
+    <string name="Rs">Rumah Sakit Pneumonia</string>
+
+    <!-- news -->
+    <string name="Desc">isi singkat dari berita yang ingin di baca</string>
+    <string name="headline">Judul Berita</string>
+
+
+    <!-- hospital -->
+
+    <!-- history -->
+    <string name="date">Tanggal Scan Rontgen</string>
+    <string name="output">Hasil</string>
+
+    <!-- result-->
+
+    <!-- account -->
+    <string name="settings">Pengaturan</string>
+    <string name="themes">Tema</string>
+    <string name="log">Keluar</string>
+    <string name="about">Tentang</string>
+    <string name="edit">ubat nama</string>
+    <string name="pass">Ubah kata sandi</string>
+
+    <!-- Navigation -->
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_history">Riwayat</string>
+    <string name="title_upload">Kirim gambar</string>
+    <string name="title_hospital">Rumah Sakit</string>
+    <string name="title_account">Akun</string>
+    <string name="title_scan">Scan</string>
+
+    <!--Description-->
+    <string name="shape">shape</string>
+    <string name="picture">Ini adalah gambar</string>
+    <string name="logo">Ini adalah logo</string>
+    <string name="back">Ini adalah tombol back</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="icon">Ini adalah icon</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="tingkat_akurasi">Tingkat Akurasi</string>
+    <string name="tv_result_acc">16%</string>
+    <string name="result_healthy">Anda tidak terjangkit Pneumonia</string>
+    <string name="ok">OK</string>
+    <string name="result_normal">Normal</string>
+    <string name="result_save">Simpan Riwayat</string>
+    <string name="selesai">Selesai</string>
+    <string name="nearby_rs">Rumah Sakit Terdekat</string>
 </resources>

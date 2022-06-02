@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_list_rs"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_card"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tv_rs_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/cek"
+            android:textColor="@color/blueblack"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:fontFamily="@font/inter_semibold" />
+
+        <TextView
+            android:id="@+id/tv_rs_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/street"
+            android:textColor="@color/button"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_rs_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rs_name" />
+
+        <TextView
+            android:id="@+id/tv_rs_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/time"
+            android:textColor="@color/button"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_rs_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rs_address" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

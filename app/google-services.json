@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "47591167561",
+    "project_id": "pneux-6e691",
+    "storage_bucket": "pneux-6e691.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47591167561:android:67b3e6c877f8fd7f15d198",
+        "android_client_info": {
+          "package_name": "com.c22ps208.pneux"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47591167561-a2otr2l7u7tkssp5vdipapc4p76d8aq7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2uG1a8TapUcyJS17w1LGtMSkNshtD0A4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47591167561-a2otr2l7u7tkssp5vdipapc4p76d8aq7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47591167561:android:cd39915c36ee86e215d198",
+        "android_client_info": {
+          "package_name": "com.example.pneux_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47591167561-a2otr2l7u7tkssp5vdipapc4p76d8aq7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2uG1a8TapUcyJS17w1LGtMSkNshtD0A4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47591167561-a2otr2l7u7tkssp5vdipapc4p76d8aq7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
