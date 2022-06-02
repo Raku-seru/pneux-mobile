@@ -14,109 +14,165 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/button2">
+            android:background="@color/button2"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/ivProfile"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="18dp"
                 android:layout_marginBottom="20dp"
                 android:contentDescription="@string/picture"
-                tools:src="@tools:sample/avatars" />
+                tools:src="@drawable/ic_account2" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="26dp"
                 android:fontFamily="@font/medium"
                 android:text="@string/username"
+                android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <FrameLayout
-        android:id="@+id/flOptions"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/medium"
+        android:text="@string/settings"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp">
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="165dp"
+        android:layout_marginEnd="40dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                app:cardCornerRadius="2dp"
-                app:cardElevation="4dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:drawableStartCompat="@drawable/ic_edit"
+                android:drawablePadding="10dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/edit"
+                android:textSize="17sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="13dp"
-                    android:drawableStart="@drawable/ic_settings"
-                    android:drawablePadding="18dp"
-                    android:fontFamily="@font/medium"
-                    android:text="@string/settings"
-                    android:textSize="24sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:drawableStartCompat="@drawable/ic_password"
+                android:drawablePadding="10dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/pass"
+                android:textSize="17sp" />
 
-            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:drawableStartCompat="@drawable/ic_theme"
+                android:drawablePadding="10dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/themes"
+                android:textSize="17sp" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                app:cardCornerRadius="2dp"
-                app:cardElevation="4dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="13dp"
-                    android:drawableStart="@drawable/ic_theme"
-                    android:drawablePadding="18dp"
-                    android:fontFamily="@font/medium"
-                    android:text="@string/themes"
-                    android:textSize="24sp" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                app:cardCornerRadius="2dp"
-                app:cardElevation="4dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="13dp"
-                    android:drawableStart="@drawable/ic_logout"
-                    android:fontFamily="@font/medium"
-                    android:drawablePadding="18dp"
-                    android:text="@string/log"
-                    android:textSize="24sp" />
-
-            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
-    </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settings"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/medium"
+        android:text="@string/about"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="40dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:drawableStartCompat="@drawable/ic_about"
+                android:drawablePadding="12dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/app"
+                android:textSize="17sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:drawableStartCompat="@drawable/ic_privasi"
+                android:drawablePadding="12dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/privasi"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:drawableStartCompat="@drawable/ic_logout"
+                android:drawablePadding="12dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/log"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tvId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/flOptions"
-        android:layout_marginTop="368dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="650dp"
         android:gravity="center"
         android:text="@string/id" />
 

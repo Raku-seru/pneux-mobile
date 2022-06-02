@@ -6,49 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.register.RegisterActivity">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:backgroundTint="@color/background"
-        app:cardElevation="4dp">
-
-        <ImageButton
-            android:id="@+id/btBack2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/ic_back_circle"
-            android:contentDescription="@string/icon" />
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/name"
-            android:contentDescription="@string/logo" />
-
-    </androidx.cardview.widget.CardView>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@drawable/shape"
-        android:backgroundTint="@color/background"
-        android:contentDescription="@string/icon" />
-
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/medium"
         android:gravity="center"
         android:text="@string/welcomeUser"
-        android:textColor="@color/white"
+        android:textColor="@color/button2"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -70,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="80dp"
             android:fontFamily="@font/orelaga"
             android:text="@string/regis"
             android:textColor="@color/button2"
@@ -146,7 +112,7 @@
             android:layout_marginTop="170dp"
             android:backgroundTint="@color/button2"
             android:text="@string/register"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
         <LinearLayout
             android:id="@+id/layDaf"

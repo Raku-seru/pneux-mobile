@@ -12,9 +12,19 @@
     <string name="created">Buat Akun</string>
     <string name="login">Masuk</string>
     <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="password">kata sandi</string>
     <string name="regis">Daftar Akun</string>
     <string name="akun">Belum Punya Akun?</string>
+    <string name="forget">Lupa Kata Sandi?</string>
+    <string name="gmail">Masukkan Email anda</string>
+    <string name="new_password">Masukkan kata sandi Baru</string>
+    <string name="req">Masukkan email anda yang terdaftar pada aplikasi ini</string>
+    <string name="relog">Masuk</string>
+    <string name="get">Selanjutnya</string>
+    <string name="app">Tentang aplikasi</string>
+    <string name="create">Buat Password Baru</string>
+    <string name="privasi">Privasi</string>
+
 
     <!-- Register -->
     <string name="hai">Selamat Datang</string>
@@ -37,6 +47,10 @@
     <string name="scan">Scan</string>
     <string name="Rs">Rumah sakit pneumonia</string>
 
+    <!-- news -->
+    <string name="Desc">isi singkat dari berita yang ingin di baca</string>
+    <string name="headline">Judul Berita</string>
+
 
     <!-- hospital -->
 
@@ -50,6 +64,9 @@
     <string name="settings">Pengaturan</string>
     <string name="themes">Tema</string>
     <string name="log">Keluar</string>
+    <string name="about">Tentang</string>
+    <string name="edit">ubat nama</string>
+    <string name="pass">Ubah kata sandi</string>
 
     <!-- Navigation -->
     <string name="title_activity_home">HomeActivity</string>
@@ -72,4 +89,5 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

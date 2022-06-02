@@ -6,49 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginActivity">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:backgroundTint="@color/background"
-        app:cardElevation="4dp">
-
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/ic_back_circle"
-            android:contentDescription="@string/icon" />
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/name"
-            android:contentDescription="@string/logo" />
-
-    </androidx.cardview.widget.CardView>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@drawable/shape"
-        android:backgroundTint="@color/background"
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ic_back_circle"
+        android:backgroundTint="@color/button2"
         android:contentDescription="@string/icon" />
 
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/medium"
         android:gravity="center"
         android:text="@string/welcome"
-        android:textColor="@color/white"
+        android:textColor="@color/button2"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -83,7 +60,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="-30dp"
             app:cardCornerRadius="10dp"
-            app:cardElevation="4dp">
+            app:cardElevation="4dp"
+            >
 
             <LinearLayout
                 android:id="@+id/layLogin"
@@ -125,12 +103,23 @@
         </androidx.cardview.widget.CardView>
 
 
+        <TextView
+            android:id="@+id/tvForget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/forget"
+            android:layout_marginTop="330dp"
+            android:gravity="end"
+            android:layout_marginEnd="30dp"
+            android:textSize="17dp"
+            android:textStyle="bold"/>
+
         <Button
             android:id="@+id/btLogin"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="150dp"
             android:backgroundTint="@color/button2"
             android:text="@string/login"
             android:textSize="15dp" />
@@ -139,7 +128,7 @@
             android:id="@+id/layDaf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="430dp"
             android:layout_marginBottom="20dp"
             android:gravity="center"
             android:orientation="horizontal">
