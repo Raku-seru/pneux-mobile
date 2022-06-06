@@ -23,17 +23,17 @@ class ForgotPasswordActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         btBackListener()
 
-        binding.btGet.setOnClickListener {
-            val email: String = binding.etGmail.text.toString().trim()
+        binding.btnNextForgot.setOnClickListener {
+            val email: String = binding.etEmailForgot.text.toString().trim()
 
             if (email.isEmpty()) {
-                binding.etGmail.error = "email harus di isi"
-                binding.etGmail.requestFocus()
+                binding.etEmailForgot.error = "email harus di isi"
+                binding.etEmailForgot.requestFocus()
                 return@setOnClickListener
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                binding.etGmail.error = "Email yang di masukkan tidak valid"
-                binding.etGmail.requestFocus()
+                binding.etEmailForgot.error = "Email yang di masukkan tidak valid"
+                binding.etEmailForgot.requestFocus()
                 return@setOnClickListener
             }
             forgotFirebase(email)
@@ -56,7 +56,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
     }
 
     private fun btBackListener() {
-        binding.btBack.setOnClickListener {
+        binding.btnBackPassword.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
         }

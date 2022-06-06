@@ -3,30 +3,48 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/drawable/bg_circle_result.xml" value="0.1945" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/drawable/button.xml" value="0.1945" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/drawable/button2.xml" value="0.1945" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/drawable/button_result_finish.xml" value="0.1945" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/drawable/button_save_result.xml" value="0.1945" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/drawable/ic_add_circle.xml" value="0.1945" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/drawable/ic_back_circle.xml" value="0.1945" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/activity_detail_history.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/activity_forgot_password.xml" value="0.33" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/activity_login.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/activity_news.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/activity_on_boarding2.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/activity_register.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/activity_result.xml" value="0.25" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/activity_splash_screen.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/fragment_account.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/fragment_home.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/fragment_hospital.xml" value="0.18" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/hospital_toolbar.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/item_hospital.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/item_list_history.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/item_list_hospital.xml" value="0.33" />
-        <entry key="..\:/Users/PHIRAKA-PC/AndroidStudioProjects/PneuX/app/src/main/res/layout/item_list_news.xml" value="0.33" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.15" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/bg_circle_result.xml" value="0.1345" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/button.xml" value="0.1345" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/button2.xml" value="0.1145" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/button_result_finish.xml" value="0.1345" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/button_save_result.xml" value="0.1345" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/ic_account.xml" value="0.1345" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/ic_account2.xml" value="0.1345" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/ic_add_circle.xml" value="0.1345" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/ic_assignment4.xml" value="0.1345" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/ic_back_circle.xml" value="0.15" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/ic_baseline_password.xml" value="0.1755" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/ic_edit.xml" value="0.174" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/ic_email.xml" value="0.1345" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/ic_mask.xml" value="0.1345" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/ic_password.xml" value="0.15" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/ic_scann.xml" value="0.163" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/radius.xml" value="0.115" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/drawable/shape.xml" value="0.115" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/font/inter_semibold.xml" value="0.21458333333333332" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/activity_detail_history.xml" value="0.184375" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/activity_forgot_password.xml" value="0.184375" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/activity_history.xml" value="0.1796875" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/activity_hospital.xml" value="0.14356884057971014" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/activity_login.xml" value="0.16" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/activity_news.xml" value="0.184375" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/activity_on_boarding2.xml" value="0.184375" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/activity_register.xml" value="0.184375" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/activity_result.xml" value="0.18" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/activity_splash_screen.xml" value="0.16" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/fragment_account.xml" value="0.184375" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/fragment_history.xml" value="0.184375" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/fragment_hospital.xml" value="0.184375" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/hospital_toolbar.xml" value="0.2" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/item_hospital.xml" value="0.184375" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/item_list_history.xml" value="0.184375" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/item_list_hospital.xml" value="0.2" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/layout/item_list_news.xml" value="0.184375" />
+        <entry key="..\:/Sera/PneuX/Repo/pneux-mobile/app/src/main/res/menu/menu_navigation.xml" value="0.16944444444444445" />
       </map>
     </option>
   </component>
@@ -35,5 +53,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2" />
+      </ProjectState>
+    </option>
   </component>
 </project>

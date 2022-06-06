@@ -6,8 +6,6 @@ import androidx.fragment.app.Fragment
 import com.c22ps208.pneux.databinding.ActivityMainBinding
 import com.c22ps208.pneux.ui.navigation.account.AccountFragment
 import com.c22ps208.pneux.ui.navigation.dashboard.HomeFragment
-import com.c22ps208.pneux.ui.navigation.history.HistoryFragment
-import com.c22ps208.pneux.ui.navigation.hospital.HospitalFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -22,8 +20,6 @@ class MainActivity : AppCompatActivity() {
         bottomNavView = binding.bottomNavView
 
         val homeFragment = HomeFragment()
-        val historyFragment = HistoryFragment()
-        val hospitalFragment = HospitalFragment()
         val accountFragment = AccountFragment()
 
         setThatFragments(homeFragment)
@@ -32,12 +28,6 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.navigation_home -> {
                     setThatFragments(homeFragment)
-                }
-                R.id.navigation_history -> {
-                    setThatFragments(historyFragment)
-                }
-                R.id.navigation_hospital -> {
-                    setThatFragments(hospitalFragment)
                 }
                 R.id.navigation_account -> {
                     setThatFragments(accountFragment)

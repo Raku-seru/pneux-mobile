@@ -19,7 +19,7 @@ class OnBoardingActivity : AppCompatActivity() {
     }
 
     private fun btnCreatedListener() {
-        binding.btCreated.setOnClickListener {
+        binding.btnCreated.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
     }

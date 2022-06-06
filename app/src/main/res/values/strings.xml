@@ -45,7 +45,10 @@
     <string name="rute">Rute Perjalanan</string>
     <string name="time">Jam buka</string>
     <string name="scan">Scan</string>
+    <string name="news2">Berita</string>
     <string name="Rs">Rumah Sakit Pneumonia</string>
+    <string name="fast">Mau lihat apa hari ini?</string>
+    <string name="send">kirim Rontgen</string>
 
     <!-- news -->
     <string name="Desc">isi singkat dari berita yang ingin di baca</string>
@@ -98,4 +101,5 @@
     <string name="result_save">Simpan Riwayat</string>
     <string name="selesai">Selesai</string>
     <string name="nearby_rs">Rumah Sakit Terdekat</string>
+    <string name="title_activity_hospital">HospitalActivity</string>
 </resources>

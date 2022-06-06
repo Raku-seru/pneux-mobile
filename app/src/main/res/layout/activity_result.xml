@@ -99,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/inter_semibold"
+        android:fontFamily="@font/medium"
         android:text="@string/nearby_rs"
         android:textSize="18sp"
         android:textStyle="bold"

@@ -30,8 +30,8 @@ class LoginActivity : AppCompatActivity() {
         btNoListener()
 
         binding.btLogin.setOnClickListener {
-            val email: String = binding.textEmail.text.toString()
-            val password: String = binding.textPass.text.toString()
+            val email = binding.textEmail.text.toString()
+            val password = binding.textPass.text.toString()
 
             if (email.isEmpty()) {
                 binding.textEmail.error = "email harus di isi"
@@ -48,8 +48,8 @@ class LoginActivity : AppCompatActivity() {
                 binding.textPass.requestFocus()
                 return@setOnClickListener
             }
-            if (password.length < 8) {
-                binding.textPass.error = "password kurang dari 8"
+            if (password.length < 6) {
+                binding.textPass.error = "password minimal 6 karakter"
                 binding.textPass.requestFocus()
                 return@setOnClickListener
 
@@ -90,7 +90,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun btBackListener() {
-        binding.btnBack.setOnClickListener {
+        binding.btnBackLogin.setOnClickListener {
             startActivity(Intent(this, OnBoardingActivity::class.java))
         }
     }
