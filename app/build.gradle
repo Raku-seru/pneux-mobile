@@ -18,6 +18,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // News API
+        buildConfigField("String", "NEWSAPI_TOKEN", '"c877e1ff828e4020b86f4583fdd60796"')
+        buildConfigField("String", "NEWS_URL", '"https://newsapi.org/v2/"')
     }
 
     buildTypes {
@@ -40,12 +44,12 @@ android {
 
 dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.5'
-    def camerax_version = "1.2.0-alpha01"
+    def camerax_version = "1.2.0-alpha02"
 
     // Core Android Modules
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
 
     // Layout
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
