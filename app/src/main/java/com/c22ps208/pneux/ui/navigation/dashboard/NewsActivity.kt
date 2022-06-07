@@ -15,7 +15,7 @@ class NewsActivity : AppCompatActivity() {
     }
 
     private fun setActionBar() {
-        supportActionBar?.title = "Berita"
+        supportActionBar?.title = "News"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 

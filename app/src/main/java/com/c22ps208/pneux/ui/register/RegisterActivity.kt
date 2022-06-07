@@ -11,10 +11,14 @@ import com.c22ps208.pneux.databinding.ActivityRegisterBinding
 import com.c22ps208.pneux.ui.login.LoginActivity
 import com.c22ps208.pneux.ui.start.OnBoardingActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var binding: ActivityRegisterBinding
     lateinit var auth: FirebaseAuth
+    var databaseReference: DatabaseReference? = null
+    var database : FirebaseDatabase? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,37 +27,39 @@ class RegisterActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance()
+        databaseReference = database?.reference!!.child("profile")
 
         btYesListener()
 
         binding.btRegis.setOnClickListener {
             val username = binding.textUser.text.toString()
             val email = binding.textEmail.text.toString()
-            val password = binding.textPass.text.toString()
+            val password = binding.textPassword.text.toString()
 
             if (username.isEmpty()) {
-                binding.textUser.error = "isi nama terlebih dahulu"
+                binding.textUser.error = "fill in username"
                 binding.textUser.requestFocus()
                 return@setOnClickListener
             }
             if (email.isEmpty()) {
-                binding.textEmail.error = "email harus di isi"
+                binding.textEmail.error = "email must be filled"
                 binding.textEmail.requestFocus()
                 return@setOnClickListener
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                binding.textEmail.error = "Email yang di masukkan tidak valid"
+                binding.textEmail.error = "invalid email"
                 binding.textEmail.requestFocus()
                 return@setOnClickListener
             }
             if (password.isEmpty()) {
-                binding.textPass.error = "password tidak boleh kosong"
-                binding.textPass.requestFocus()
+                binding.textPassword.error = "password cannot be empty"
+                binding.textPassword.requestFocus()
                 return@setOnClickListener
             }
             if (password.length < 8) {
-                binding.textPass.error = "password kurang dari 8"
-                binding.textPass.requestFocus()
+                binding.textPassword.error = "password less than 8"
+                binding.textPassword.requestFocus()
                 return@setOnClickListener
 
             }
@@ -67,9 +73,12 @@ class RegisterActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
+                    val currentUser = auth.currentUser
+                    val CurrentUserDb =databaseReference?.child(currentUser?.uid!!)
+                    CurrentUserDb?.child("username")?.setValue(binding.textUser.text.toString())
                     Toast.makeText(
                         this,
-                        "Selamat akun anda suda terdaftar di PneuX",
+                        "Welcome to PneuX",
                         Toast.LENGTH_LONG
                     ).show()
                     val intent = Intent(this, LoginActivity::class.java)

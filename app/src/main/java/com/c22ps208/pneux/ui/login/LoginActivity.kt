@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import com.c22ps208.pneux.MainActivity
 import com.c22ps208.pneux.databinding.ActivityLoginBinding
+import com.c22ps208.pneux.ui.navigation.dashboard.HomeFragment
 import com.c22ps208.pneux.ui.password.ForgotPasswordActivity
 import com.c22ps208.pneux.ui.register.RegisterActivity
 import com.c22ps208.pneux.ui.start.OnBoardingActivity
@@ -25,13 +26,20 @@ class LoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
+        val currentuser = auth.currentUser
+        if (currentuser != null){
+            startActivity(Intent(this, HomeFragment::class.java))
+            finish()
+        }
+
+
         btBackListener()
         btForgetListener()
         btNoListener()
 
         binding.btLogin.setOnClickListener {
             val email = binding.textEmail.text.toString()
-            val password = binding.textPass.text.toString()
+            val password = binding.textPw.text.toString()
 
             if (email.isEmpty()) {
                 binding.textEmail.error = "email harus di isi"
@@ -44,37 +52,39 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             if (password.isEmpty()) {
-                binding.textPass.error = "password tidak boleh kosong"
-                binding.textPass.requestFocus()
+                binding.textPw.error = "password tidak boleh kosong"
+                binding.textPw.requestFocus()
                 return@setOnClickListener
             }
-            if (password.length < 6) {
-                binding.textPass.error = "password minimal 6 karakter"
-                binding.textPass.requestFocus()
+            if (password.length < 8) {
+                binding.textPw.error = "password kurang dari 8"
+                binding.textPw.requestFocus()
                 return@setOnClickListener
 
             }
-            loginFirebase(email, password)
+            LoginFirebase(email, password)
             showLoading(false)
-
         }
-
     }
 
 
-    private fun loginFirebase(email: String, password: String) {
+    private fun LoginFirebase(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
-                    Toast.makeText(this, "Selamat Datang $email", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this,
+                        "Wellcome $email",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
-
             }
     }
+
 
     private fun btNoListener() {
         binding.tvNo.setOnClickListener {

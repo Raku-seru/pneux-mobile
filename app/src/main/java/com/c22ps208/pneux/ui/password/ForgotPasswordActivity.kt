@@ -59,7 +59,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
         binding.btnBackPassword.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
-        }
+    }
 
 
 }
