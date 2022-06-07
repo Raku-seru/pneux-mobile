@@ -53,6 +53,7 @@
     <!-- news -->
     <string name="Desc">isi singkat dari berita yang ingin di baca</string>
     <string name="headline">Judul Berita</string>
+    <string name="NewsFailed">Gagal Mendapatkan Berita</string>
 
 
     <!-- hospital -->
@@ -102,4 +103,5 @@
     <string name="selesai">Selesai</string>
     <string name="nearby_rs">Rumah Sakit Terdekat</string>
     <string name="title_activity_hospital">HospitalActivity</string>
+    <string name="fetchfailed">Ada Kesalahan Mendapatkan Data</string>
 </resources>
