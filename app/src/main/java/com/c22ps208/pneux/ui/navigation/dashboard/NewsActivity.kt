@@ -12,6 +12,8 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.c22ps208.pneux.adapter.NewsAdapter
+import com.c22ps208.pneux.adapter.OnItemClickCallback
+import com.c22ps208.pneux.data.remote.response.ArticlesItem
 import com.c22ps208.pneux.data.remote.response.NewsResponse
 import com.c22ps208.pneux.databinding.ActivityNewsBinding
 import com.c22ps208.pneux.preferences.SettingPreferences
@@ -63,7 +65,7 @@ class NewsActivity : AppCompatActivity() {
         binding.rvNewslist.setHasFixedSize(true)
 
         newsAdapter.setOnItemClickCallback(object : OnItemClickCallback {
-            override fun onItemClicked(news: NewsResponse) {
+            override fun onItemClicked(articlesItem: ArticlesItem) {
 //                hideUserList()
 //                val intent = Intent(this@NewsActivity, DetailUserActivity::class.java)
 //                intent.putExtra(DetailUserActivity.KEY_USER, user)

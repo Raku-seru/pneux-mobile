@@ -5,9 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.c22ps208.pneux.data.remote.response.NewsResponse
 import com.c22ps208.pneux.databinding.ItemListNewsBinding
+import com.c22ps208.pneux.adapter.NewsAdapter.MyViewHolder
+import com.c22ps208.pneux.data.remote.response.ArticlesItem
 
 class NewsAdapter : RecyclerView.Adapter<MyViewHolder>() {
-    private var listNewsResponse = NewsResponse()
+    private var articlesItem = ArrayList<ArticlesItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = ItemListNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -15,9 +17,24 @@ class NewsAdapter : RecyclerView.Adapter<MyViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(listNewsResponse[position])
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClickedResp(listNewsResponse[position]) }
+        holder.bind(articlesItem[position])
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(articlesItem[position]) }
     }
 
-    override fun getItemCount() = listNewsResponse.size
+    override fun getItemCount() = articlesItem.size
+
+    class MyViewHolder(private var binding: ItemListNewsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(articlesItem: ArticlesItem) {
+            binding.tvTitleNews.text = articlesItem.title
+            binding.tvDescNews.text = articlesItem.description
+        }
+    }
+
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
 }
