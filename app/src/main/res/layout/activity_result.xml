@@ -34,10 +34,10 @@
         android:id="@+id/tv_result_acc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
         android:text="@string/tv_result_acc"
         android:textColor="@color/white"
         android:textSize="80sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/iv_result_circle"
         app:layout_constraintEnd_toEndOf="@+id/iv_result_circle"
         app:layout_constraintStart_toStartOf="@+id/iv_result_circle"
@@ -50,9 +50,10 @@
         android:text="@string/result_normal"
         android:textColor="@color/white"
         android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_result_circle"
         app:layout_constraintEnd_toEndOf="@+id/iv_result_circle"
         app:layout_constraintStart_toStartOf="@+id/iv_result_circle"
-        app:layout_constraintTop_toBottomOf="@+id/tv_result_acc" />
+        app:layout_constraintTop_toTopOf="@+id/iv_result_circle" />
 
     <Button
         android:id="@+id/btn_save_result"

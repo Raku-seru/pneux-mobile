@@ -5,6 +5,7 @@
     <!-- OnBoarding -->
     <string name="PneuX">PneuX</string>
     <string name="desc">First prediction of pneumonia based on rontgen picture</string>
+    <string name="welcomeTo">Welcome to PneuX</string>
 
     <!-- Login. -->
     <string name="klik">Klik disini</string>
@@ -104,4 +105,10 @@
     <string name="nearby_rs">Rumah Sakit Terdekat</string>
     <string name="title_activity_hospital">HospitalActivity</string>
     <string name="fetchfailed">Ada Kesalahan Mendapatkan Data</string>
+    <string name="validation_name">Nama harus di isi</string>
+    <string name="validation_email">Email harus di isi</string>
+    <string name="validation_emailvalid">Email yang di masukkan tidak valid</string>
+    <string name="validation_passwd">Password tidak boleh kosong</string>
+    <string name="validation_passwd_length">Password kurang dari 8</string>
+    <string name="check_email">Cek Email anda</string>
 </resources>

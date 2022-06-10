@@ -7,6 +7,7 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import com.c22ps208.pneux.MainActivity
+import com.c22ps208.pneux.R
 import com.c22ps208.pneux.databinding.ActivityLoginBinding
 import com.c22ps208.pneux.ui.navigation.dashboard.HomeFragment
 import com.c22ps208.pneux.ui.password.ForgotPasswordActivity
@@ -27,11 +28,10 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         val currentuser = auth.currentUser
-        if (currentuser != null){
-            startActivity(Intent(this, HomeFragment::class.java))
+        if (currentuser != null) {
+                startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
-
 
         btBackListener()
         btForgetListener()
@@ -42,22 +42,22 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.textPw.text.toString()
 
             if (email.isEmpty()) {
-                binding.textEmail.error = "email harus di isi"
+                binding.textEmail.error = getString(R.string.validation_name)
                 binding.textEmail.requestFocus()
                 return@setOnClickListener
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                binding.textEmail.error = "Email yang di masukkan tidak valid"
+                binding.textEmail.error = getString(R.string.validation_email)
                 binding.textEmail.requestFocus()
                 return@setOnClickListener
             }
             if (password.isEmpty()) {
-                binding.textPw.error = "password tidak boleh kosong"
+                binding.textPw.error = getString(R.string.validation_passwd)
                 binding.textPw.requestFocus()
                 return@setOnClickListener
             }
             if (password.length < 8) {
-                binding.textPw.error = "password kurang dari 8"
+                binding.textPw.error = getString(R.string.validation_passwd_length)
                 binding.textPw.requestFocus()
                 return@setOnClickListener
 
@@ -74,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                     Toast.makeText(
                         this,
-                        "Wellcome $email",
+                        "Welcome $email",
                         Toast.LENGTH_SHORT
                     ).show()
                     val intent = Intent(this, MainActivity::class.java)
@@ -84,7 +84,6 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
     }
-
 
     private fun btNoListener() {
         binding.tvNo.setOnClickListener {
@@ -104,7 +103,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, OnBoardingActivity::class.java))
         }
     }
-
 
     private fun showLoading(state: Boolean) {
         if (state) {

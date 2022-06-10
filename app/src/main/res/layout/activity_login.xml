@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,11 +14,13 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/ic_back_circle"
         android:backgroundTint="@color/button2"
-        android:contentDescription="@string/icon" />
+        android:contentDescription="@string/icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvWelcome"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:fontFamily="@font/medium"
@@ -26,146 +28,150 @@
         android:text="@string/welcome"
         android:textColor="@color/button2"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/orelaga"
+        android:text="@string/login"
+        android:textColor="@color/button2"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/itemUsername"
+        app:layout_constraintStart_toStartOf="@+id/itemUsername" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/itemLogin"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_below="@id/tvWelcome"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:id="@+id/itemUsername"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
         app:cardCornerRadius="10dp"
-        app:cardElevation="4dp">
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome">
+
+        <LinearLayout
+            android:id="@+id/layLogin"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ipEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:drawablePadding="18dp"
+                android:hint="@string/email"
+                app:startIconDrawable="@drawable/ic_email">
+
+                <EditText
+                    android:id="@+id/textEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ipPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:hint="@string/password"
+                app:passwordToggleEnabled="true"
+                app:startIconDrawable="@drawable/ic_password">
+
+                <EditText
+                    android:id="@+id/textPw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tvForget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="end"
+        android:text="@string/forget"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemUsername" />
+
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/button2"
+        android:text="@string/login"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvForget" />
+
+    <LinearLayout
+        android:id="@+id/layDaf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/tv_about_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="70dp"
-            android:fontFamily="@font/orelaga"
-            android:text="@string/login"
-            android:textColor="@color/button2"
-            android:textSize="28sp" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/itemUsername"
-            android:layout_width="330dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="-30dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
-                android:id="@+id/layLogin"
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="20dp"
-                android:orientation="vertical">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/ipEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    app:startIconDrawable="@drawable/ic_email"
-                    android:drawablePadding="18dp"
-                    android:hint="@string/email">
-                    <EditText
-                        android:id="@+id/textEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textEmailAddress"
-                        android:background="@drawable/shape"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/ipPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:hint="@string/password"
-                    app:startIconDrawable="@drawable/ic_password"
-                    app:passwordToggleEnabled="true">
-                    <EditText
-                        android:id="@+id/textPw"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPassword"
-                        android:background="@drawable/shape"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
+            android:text="@string/akun"
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tvForget"
-            android:layout_width="match_parent"
+            android:id="@+id/tvNo"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="330dp"
-            android:layout_marginEnd="30dp"
-            android:gravity="end"
-            android:text="@string/forget"
-            android:textSize="17sp"
+            android:layout_marginStart="8dp"
+            android:text="@string/klik"
+            android:textColor="@color/blueblack"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btLogin"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="150dp"
-            android:backgroundTint="@color/button2"
-            android:text="@string/login"
-            android:textSize="15sp" />
-
-        <LinearLayout
-            android:id="@+id/layDaf"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="430dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/akun"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/tvNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@string/klik"
-                android:textColor="@color/blueblack"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_about_login"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/itemLogin"
+        android:layout_marginBottom="24dp"
         android:gravity="center"
-        android:text="@string/id" />
-
+        android:text="@string/id"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -177,4 +183,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

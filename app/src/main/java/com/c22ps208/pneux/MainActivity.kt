@@ -8,6 +8,8 @@ import com.c22ps208.pneux.ui.navigation.account.AccountFragment
 import com.c22ps208.pneux.ui.navigation.dashboard.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+
+
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavView: BottomNavigationView
     lateinit var binding: ActivityMainBinding
@@ -32,7 +34,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_account -> {
                     setThatFragments(accountFragment)
                 }
-
             }
 
             true

@@ -1,14 +1,17 @@
 package com.c22ps208.pneux.ui.navigation.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.c22ps208.pneux.MainActivity
 import com.c22ps208.pneux.R
 import com.c22ps208.pneux.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
@@ -40,6 +43,23 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         displayName()
 
+        // CardView Listener
+        binding.cvHos.setOnClickListener() {
+            // TO DO
+        }
+
+        binding.cvNews.setOnClickListener() {
+            val intent = Intent(context, NewsActivity::class.java)
+            context?.startActivity(intent)
+        }
+
+        binding.cvScan.setOnClickListener() {
+            // TO DO
+        }
+
+        binding.cvHistory.setOnClickListener() {
+            // TO DO
+        }
     }
 
     private fun displayName() {

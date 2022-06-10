@@ -135,7 +135,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cdHos"
+            android:id="@+id/cvHos"
             android:layout_width="80dp"
             android:layout_height="90dp"
             android:layout_marginStart="24dp"
@@ -161,7 +161,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cdNews"
+            android:id="@+id/cvNews"
             android:layout_width="80dp"
             android:layout_height="90dp"
             android:layout_marginStart="15dp"
@@ -187,7 +187,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cdScan"
+            android:id="@+id/cvScan"
             android:layout_width="80dp"
             android:layout_height="90dp"
             android:layout_marginStart="15dp"
@@ -213,7 +213,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cd"
+            android:id="@+id/cvHistory"
             android:layout_width="80dp"
             android:layout_height="90dp"
             android:layout_marginStart="15dp"
@@ -242,7 +242,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/cvBanner"
         android:layout_width="370dp"
         android:layout_height="130dp"
         android:layout_marginStart="8dp"
@@ -315,7 +315,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/health"
+        android:id="@+id/healthinfo"
         android:layout_width="320dp"
         android:layout_height="100dp"
         android:layout_marginTop="16dp"
@@ -324,7 +324,7 @@
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+        app:layout_constraintTop_toBottomOf="@+id/cvBanner">
 
         <LinearLayout
             android:id="@+id/layHealth"
@@ -355,7 +355,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_rs_terdekat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -366,7 +366,7 @@
         android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/health" />
+        app:layout_constraintTop_toBottomOf="@+id/healthinfo" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home_nearby"
@@ -376,7 +376,7 @@
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rs_terdekat"
         tools:listitem="@layout/item_list_hospital" />
 
 

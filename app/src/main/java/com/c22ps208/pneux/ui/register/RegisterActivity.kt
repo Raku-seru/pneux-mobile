@@ -7,6 +7,7 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import com.c22ps208.pneux.MainActivity
+import com.c22ps208.pneux.R
 import com.c22ps208.pneux.databinding.ActivityRegisterBinding
 import com.c22ps208.pneux.ui.login.LoginActivity
 import com.c22ps208.pneux.ui.start.OnBoardingActivity
@@ -74,13 +75,10 @@ class RegisterActivity : AppCompatActivity() {
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
                     val currentUser = auth.currentUser
-                    val CurrentUserDb =databaseReference?.child(currentUser?.uid!!)
-                    CurrentUserDb?.child("username")?.setValue(binding.textUser.text.toString())
-                    Toast.makeText(
-                        this,
-                        "Welcome to PneuX",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    val currentUserDb = databaseReference?.child(currentUser?.uid!!)
+                    currentUserDb?.child("username")?.setValue(binding.textUser.text.toString())
+                    Toast.makeText(this, R.string.welcomeTo, Toast.LENGTH_SHORT).show()
+
                     val intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
                 } else {
