@@ -14,6 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PneuX_Mobile">
         <activity
+            android:name=".ui.navigation.scan.ScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.change.ChangePassActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.change.ChangeEmailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.navigation.history.HistoryActivity"
             android:exported="false" />
         <!--

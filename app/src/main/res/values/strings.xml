@@ -70,8 +70,17 @@
     <string name="themes">Tema</string>
     <string name="log">Keluar</string>
     <string name="about">Tentang</string>
-    <string name="edit">ubat nama</string>
+    <string name="edit">ubah email</string>
     <string name="pass">Ubah kata sandi</string>
+    <string name="privacy">Dont worry, we will keep all your data confendetial</string>
+    <string name="oke">Close</string>
+    <string name="changeEmail">Change New Email</string>
+    <string name="changePass">Change New Password</string>
+    <string name="newMail">Enter New Email</string>
+    <string name="old">Enter old password</string>
+    <string name="neww">Enter New Password</string>
+    <string name="sv">Save</string>
+    <string name="aboutUs">Hello We are PneuX</string>
 
     <!-- Navigation -->
     <string name="title_activity_home">HomeActivity</string>
@@ -109,6 +118,9 @@
     <string name="validation_email">Email harus di isi</string>
     <string name="validation_emailvalid">Email yang di masukkan tidak valid</string>
     <string name="validation_passwd">Password tidak boleh kosong</string>
+    <string name="validation_password">Password tidak sama</string>
     <string name="validation_passwd_length">Password kurang dari 8</string>
     <string name="check_email">Cek Email anda</string>
+    <string name="confirm">Confirm new password</string>
+
 </resources>

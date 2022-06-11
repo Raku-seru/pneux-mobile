@@ -1,11 +1,14 @@
 package com.c22ps208.pneux
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.c22ps208.pneux.databinding.ActivityMainBinding
 import com.c22ps208.pneux.ui.navigation.account.AccountFragment
 import com.c22ps208.pneux.ui.navigation.dashboard.HomeFragment
+import com.c22ps208.pneux.ui.navigation.scan.ScanActivity
+import com.c22ps208.pneux.ui.password.ForgotPasswordActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -20,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
         bottomNavView = binding.bottomNavView
+
+        btnScan()
 
         val homeFragment = HomeFragment()
         val accountFragment = AccountFragment()
@@ -39,6 +44,12 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+    }
+
+    private fun btnScan() {
+        binding.btScan.setOnClickListener {
+            startActivity(Intent(this, ScanActivity::class.java))
+        }
     }
 
     private fun setThatFragments(fragment: Fragment) {

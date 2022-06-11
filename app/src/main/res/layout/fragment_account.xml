@@ -64,11 +64,12 @@
         app:cardElevation="4dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/changeEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -80,6 +81,7 @@
                 android:textSize="17sp" />
 
             <TextView
+                android:id="@+id/changePass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -90,16 +92,30 @@
                 android:text="@string/pass"
                 android:textSize="17sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:drawableStartCompat="@drawable/ic_theme"
-                android:drawablePadding="10dp"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
-                android:text="@string/themes"
-                android:textSize="17sp" />
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:drawableStart="@drawable/ic_theme"
+                    android:drawablePadding="10dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/themes"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/theme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="170dp"
+                    android:layout_marginTop="8dp"/>
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -134,6 +150,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/aboutUs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -144,6 +161,7 @@
                 android:text="@string/app"
                 android:textSize="17sp" />
             <TextView
+                android:id="@+id/privasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -157,14 +175,14 @@
             <TextView
                 android:id="@+id/logOut"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="12dp"
                 android:layout_margin="10dp"
-                app:drawableStartCompat="@drawable/ic_logout"
                 android:drawablePadding="12dp"
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
                 android:text="@string/log"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                app:drawableStartCompat="@drawable/ic_logout" />
 
         </LinearLayout>
 
