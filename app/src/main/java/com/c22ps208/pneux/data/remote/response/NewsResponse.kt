@@ -1,6 +1,6 @@
 package com.c22ps208.pneux.data.remote.response
 
-import android.os.Parcelable
+import  android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 

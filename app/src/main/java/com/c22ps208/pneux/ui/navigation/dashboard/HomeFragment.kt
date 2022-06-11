@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import com.c22ps208.pneux.MainActivity
 import com.c22ps208.pneux.R
 import com.c22ps208.pneux.databinding.FragmentHomeBinding
+import com.c22ps208.pneux.ui.navigation.history.HistoryActivity
+import com.c22ps208.pneux.ui.navigation.scan.ScanActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -65,11 +67,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         binding.cvScan.setOnClickListener() {
-            // TO DO
+            val intent = Intent(context, ScanActivity::class.java)
+            context?.startActivity(intent)
         }
 
         binding.cvHistory.setOnClickListener() {
-            // TO DO
+            val intent = Intent(context, HistoryActivity::class.java)
+            context?.startActivity(intent)
         }
     }
 
@@ -90,7 +94,5 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         })
     }
-
-
 
 }
