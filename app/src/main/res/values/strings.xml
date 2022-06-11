@@ -37,9 +37,9 @@
     <string name="Hello">Hello,</string>
     <string name="user">Username</string>
     <string name="welcomeUser">Selamat datang di PneuX</string>
-    <string name="news">Baca Berita Seputar Pneumonia di sini</string>
+    <string name="news">Baca Berita Seputar Kesehatan di sini</string>
     <string name="health">Jaga kesehatanmu jangan lupa untuk berolahraga dan perbanyak minum air putih!!</string>
-    <string name="breaking">Berita Pneumonia</string>
+    <string name="breaking">Berita Kesehatan</string>
     <string name="rs">Rumah sakit terdekat</string>
     <string name="cek">Nama Rumah Sakit</string>
     <string name="street">Alamat Rumah Sakit</string>

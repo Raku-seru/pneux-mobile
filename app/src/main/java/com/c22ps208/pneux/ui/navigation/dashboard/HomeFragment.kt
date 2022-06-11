@@ -42,8 +42,19 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         databaseReference = database?.reference!!.child("profile")
 
         displayName()
-
         // CardView Listener
+        cardViewListener()
+        bannerListener()
+    }
+
+    private fun bannerListener() {
+        binding.btnBannerNews.setOnClickListener() {
+            val intent = Intent(context, NewsActivity::class.java)
+            context?.startActivity(intent)
+        }
+    }
+
+    private fun cardViewListener() {
         binding.cvHos.setOnClickListener() {
             // TO DO
         }
@@ -61,6 +72,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             // TO DO
         }
     }
+
+
 
     private fun displayName() {
         val user = auth.currentUser
