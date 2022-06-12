@@ -77,8 +77,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
     }
 
-
-
     private fun displayName() {
         val user = auth.currentUser
         val userReference = databaseReference?.child(user?.uid!!)
