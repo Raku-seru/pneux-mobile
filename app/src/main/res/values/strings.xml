@@ -72,15 +72,15 @@
     <string name="about">Tentang</string>
     <string name="edit">ubah email</string>
     <string name="pass">Ubah kata sandi</string>
-    <string name="privacy">Dont worry, we will keep all your data confendetial</string>
-    <string name="oke">Close</string>
-    <string name="changeEmail">Change New Email</string>
-    <string name="changePass">Change New Password</string>
-    <string name="newMail">Enter New Email</string>
-    <string name="old">Enter old password</string>
-    <string name="neww">Enter New Password</string>
-    <string name="sv">Save</string>
-    <string name="aboutUs">Hello We are PneuX</string>
+    <string name="privacy">Jangan Khawatir kami akan menjaga rahasia data mu dengan aman</string>
+    <string name="oke">Tutup</string>
+    <string name="changeEmail">Ubah emabil baru</string>
+    <string name="changePass">Ubah password baru</string>
+    <string name="newMail">Masukkan email baru</string>
+    <string name="old">Masukkan Password lama</string>
+    <string name="neww">Masukkan password baru</string>
+    <string name="sv">Simpan</string>
+    <string name="aboutUs">Hallo kami adalah PneuX</string>
 
     <!-- Navigation -->
     <string name="title_activity_home">HomeActivity</string>

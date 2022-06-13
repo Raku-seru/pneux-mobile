@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
+import com.c22ps208.pneux.MainActivity
 import com.c22ps208.pneux.R
 import com.c22ps208.pneux.databinding.ActivityChangeEmailBinding
 import com.c22ps208.pneux.ui.navigation.account.AccountFragment
@@ -44,7 +45,7 @@ class ChangeEmailActivity : AppCompatActivity() {
                     if (it.isSuccessful){
                         Toast.makeText(this, "Email Berhasil di Ubah", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this, AccountFragment::class.java))
-                        finish()
+                         finish()
                     } else {
                         Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
                     }
@@ -57,7 +58,7 @@ class ChangeEmailActivity : AppCompatActivity() {
 
     private fun btnBack() {
         binding.btnBack.setOnClickListener {
-            startActivity(Intent(this, AccountFragment::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 }

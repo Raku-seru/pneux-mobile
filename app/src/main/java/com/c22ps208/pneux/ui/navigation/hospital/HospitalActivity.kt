@@ -1,19 +1,19 @@
 package com.c22ps208.pneux.ui.navigation.hospital
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import com.c22ps208.pneux.MainActivity
 import com.c22ps208.pneux.R
 import com.c22ps208.pneux.databinding.ActivityHospitalBinding
-import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.MapStyleOptions
 
 class HospitalActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -27,11 +27,19 @@ class HospitalActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(binding.root)
 
         supportActionBar?.hide()
+        btnBack()
+
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+    }
+
+    private fun btnBack() {
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     /**
@@ -45,11 +53,18 @@ class HospitalActivity : AppCompatActivity(), OnMapReadyCallback {
      */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+        mMap.setMapStyle(
+            MapStyleOptions.loadRawResourceStyle(
+                this, R.raw.map_style
+            )
+        )
 
-        // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        mMap.uiSettings.isZoomControlsEnabled = true
+        mMap.uiSettings.isIndoorLevelPickerEnabled = true
+        mMap.uiSettings.isCompassEnabled = true
+        mMap.uiSettings.isMapToolbarEnabled = true
+
+
 
         getMyLocation()
     }
@@ -73,5 +88,6 @@ class HospitalActivity : AppCompatActivity(), OnMapReadyCallback {
             requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         }
     }
+
 
 }

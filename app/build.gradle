@@ -84,7 +84,6 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
     implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
     implementation 'org.tensorflow:tensorflow-lite-gpu:2.3.0'
-    implementation 'com.google.firebase:firebase-ml-modeldownloader-ktx:24.0.3'
 
     // Test Modules
     testImplementation 'junit:junit:4.13.2'

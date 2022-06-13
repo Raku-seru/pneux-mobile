@@ -12,7 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <include layout="@layout/hospital_toolbar"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="30dp"
+        android:background="@drawable/ic_back_circle"
+        android:backgroundTint="@color/button2"
+        android:contentDescription="@string/icon" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvItemHospital"
@@ -23,5 +31,7 @@
         android:layout_marginTop="500dp"
         android:layout_marginEnd="15dp"
         tools:listitem="@layout/item_hospital" />
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
