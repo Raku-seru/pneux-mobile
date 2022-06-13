@@ -1,4 +1,4 @@
-package com.example.pneux_mobile.data.local
+package com.c22ps208.pneux.data.remote.response
 
 object jarak {
 

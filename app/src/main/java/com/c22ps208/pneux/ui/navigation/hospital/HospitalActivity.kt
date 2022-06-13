@@ -64,8 +64,6 @@ class HospitalActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.uiSettings.isCompassEnabled = true
         mMap.uiSettings.isMapToolbarEnabled = true
 
-
-
         getMyLocation()
     }
 
@@ -88,6 +86,5 @@ class HospitalActivity : AppCompatActivity(), OnMapReadyCallback {
             requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         }
     }
-
 
 }

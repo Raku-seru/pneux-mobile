@@ -1,16 +1,18 @@
-package com.example.pneux_mobile.data.api
+package com.c22ps208.pneux.data.remote.service
 
-import com.example.pneux_mobile.data.model.ListResponse
+import com.c22ps208.pneux.BuildConfig
+import com.c22ps208.pneux.data.remote.response.NearbyResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface HospitalInterface {
-
     @GET("nearbysearch/json")
-    fun getDataResult(@Query("key") key: String,
-                      @Query("keyword") keyword: String,
-                      @Query("location") location: String,
-                      @Query("rankby") rankby: String?): Call<ListResponse>
+    fun getNearbySearch(
+        @Query("key") key: String,
+        @Query("keyword") keyword: String? = "hospital",
+        @Query("location") location: String? = "-6.174283898481838,106.82656373164592",
+        @Query("rankby") rankby: String
+    ): Call<NearbyResponse>
 
 }

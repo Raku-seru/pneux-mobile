@@ -24,5 +24,18 @@ class ApiConfig {
         }
 
         // Other APIs here
+        fun getHospitalService(): HospitalInterface {
+            val loggingInterceptor =
+                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+            val client = OkHttpClient.Builder()
+                .addInterceptor(loggingInterceptor)
+                .build()
+            val retrofit = Retrofit.Builder()
+                .baseUrl(BuildConfig.MAPS_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+                .build()
+            return retrofit.create(HospitalInterface::class.java)
+        }
     }
 }

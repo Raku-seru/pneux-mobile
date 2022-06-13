@@ -4,14 +4,13 @@ import android.app.ProgressDialog
 import android.app.ProgressDialog.show
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.c22ps208.pneux.R
 import com.c22ps208.pneux.adapter.HospitalAdapter
 import com.c22ps208.pneux.ui.viewmodels.HospitalViewModel
-import com.example.pneux_mobile.data.model.HospitalResponse
+import com.c22ps208.pneux.data.remote.response.HospitalResponse
 import im.delight.android.location.SimpleLocation
 import java.util.ArrayList
 

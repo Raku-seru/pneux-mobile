@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.c22ps208.pneux.MainActivity
 import com.c22ps208.pneux.R
@@ -59,6 +60,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun cardViewListener() {
         binding.cvHos.setOnClickListener() {
             // TO DO
+            Toast.makeText(context, "Hospital coming soon", Toast.LENGTH_SHORT).show()
         }
 
         binding.cvNews.setOnClickListener() {

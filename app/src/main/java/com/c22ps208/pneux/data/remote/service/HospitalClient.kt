@@ -1,5 +1,6 @@
 package com.example.pneux_mobile.data.api
 
+import com.c22ps208.pneux.data.remote.service.HospitalInterface
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

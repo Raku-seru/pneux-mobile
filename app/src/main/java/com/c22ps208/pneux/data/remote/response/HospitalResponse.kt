@@ -1,18 +1,22 @@
-package com.example.pneux_mobile.data.model
+package com.c22ps208.pneux.data.remote.response
 
+import android.os.Parcelable
+import com.example.pneux_mobile.data.model.LocationResponse
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
-class HospitalResponse {
+@Parcelize
+data class HospitalResponse(
 
     @SerializedName("geometry")
-    lateinit var  locationResponse: LocationResponse
+    val locationResponse: LocationResponse,
 
     @SerializedName("name")
-    lateinit var name: String
+    val name: String,
 
     @SerializedName("vicinity")
-    lateinit var vicinity: String
+    val vicinity: String,
 
     @SerializedName("place_id")
-    lateinit var placeId: String
-}
+    val placeId: String
+) : Parcelable

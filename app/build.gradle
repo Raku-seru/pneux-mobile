@@ -22,6 +22,8 @@ android {
         // News API
         buildConfigField("String", "NEWSAPI_TOKEN", '"c877e1ff828e4020b86f4583fdd60796"')
         buildConfigField("String", "NEWS_URL", '"https://newsapi.org/v2/"')
+        buildConfigField("String", "MAPS_URL", '"https://maps.googleapis.com/maps/api/place/"')
+        buildConfigField("String", "MAPS_API", '"AIzaSyArX6YYAcJDT0Jv6MQIXSNjYW26rtiLL9U"')
     }
 
     buildTypes {
@@ -74,6 +76,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'com.google.android.gms:play-services-location:20.0.0'
+    implementation 'com.github.delight-im:Android-SimpleLocation:v1.1.0'
 
     // LiveData
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
