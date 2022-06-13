@@ -25,7 +25,7 @@
                 android:layout_marginTop="18dp"
                 android:layout_marginBottom="20dp"
                 android:contentDescription="@string/picture"
-                tools:src="@drawable/ic_account2" />
+                android:src="@drawable/ic_account2" />
 
             <TextView
                 android:id="@+id/username"
@@ -145,7 +145,7 @@
         app:cardElevation="4dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -154,28 +154,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                app:drawableStartCompat="@drawable/ic_about"
                 android:drawablePadding="12dp"
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
                 android:text="@string/app"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                app:drawableStartCompat="@drawable/ic_about" />
+
             <TextView
                 android:id="@+id/privasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                app:drawableStartCompat="@drawable/ic_privasi"
                 android:drawablePadding="12dp"
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
                 android:text="@string/privasi"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                app:drawableStartCompat="@drawable/ic_privasi" />
 
             <TextView
                 android:id="@+id/logOut"
                 android:layout_width="wrap_content"
-                android:layout_height="12dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:drawablePadding="12dp"
                 android:paddingStart="5dp"

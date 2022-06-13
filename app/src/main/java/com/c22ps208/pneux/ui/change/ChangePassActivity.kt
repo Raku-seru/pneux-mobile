@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.c22ps208.pneux.MainActivity
 import com.c22ps208.pneux.R
 import com.c22ps208.pneux.databinding.ActivityChangeEmailBinding
 import com.c22ps208.pneux.databinding.ActivityChangePassBinding
@@ -75,7 +76,7 @@ class ChangePassActivity : AppCompatActivity() {
 
     private fun btnBack() {
         binding.btnBack.setOnClickListener {
-            startActivity(Intent(this, AccountFragment::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 }

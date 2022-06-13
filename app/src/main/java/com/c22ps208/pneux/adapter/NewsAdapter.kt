@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.c22ps208.pneux.data.remote.response.NewsResponse
 import com.c22ps208.pneux.databinding.ItemListNewsBinding
 import com.c22ps208.pneux.adapter.NewsAdapter.MyViewHolder
 import com.c22ps208.pneux.data.remote.response.ArticlesItem

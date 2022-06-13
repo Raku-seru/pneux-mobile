@@ -67,15 +67,15 @@
                     android:textStyle="italic" />
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/ivProfile"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:contentDescription="@string/picture"
-                tools:src="@tools:sample/avatars" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                app:lottie_rawRes="@raw/about"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_marginStart="40dp"
+                android:layout_gravity="center"
+                app:lottie_speed="1.3"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -378,7 +378,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_rs_terdekat"
-        tools:listitem="@layout/item_list_hospital" />
+        tools:listitem="@layout/item_hospital" />
 
 
 
