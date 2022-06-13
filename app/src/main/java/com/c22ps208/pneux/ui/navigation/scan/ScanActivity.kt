@@ -1,44 +1,44 @@
 package com.c22ps208.pneux.ui.navigation.scan
 
-import android.Manifest
 import android.annotation.SuppressLint
-import android.content.Context
+import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.provider.MediaStore
 import android.util.Log
-import android.util.Size
+import android.view.View
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
 import com.c22ps208.pneux.MainActivity
-import com.c22ps208.pneux.R
 import com.c22ps208.pneux.databinding.ActivityScanBinding
-import org.tensorflow.lite.DataType
+import com.c22ps208.pneux.preferences.AppPermissions
+import com.c22ps208.pneux.ui.navigation.ResultActivity
+import com.google.firebase.ml.modeldownloader.CustomModel
+import com.google.firebase.ml.modeldownloader.CustomModelDownloadConditions
+import com.google.firebase.ml.modeldownloader.DownloadType
+import com.google.firebase.ml.modeldownloader.FirebaseModelDownloader
 import org.tensorflow.lite.Interpreter
-import org.tensorflow.lite.nnapi.NnApiDelegate
-import org.tensorflow.lite.support.common.FileUtil
-import org.tensorflow.lite.support.common.ops.NormalizeOp
-import org.tensorflow.lite.support.image.ImageProcessor
-import org.tensorflow.lite.support.image.TensorImage
-import org.tensorflow.lite.support.image.ops.ResizeOp
-import org.tensorflow.lite.support.image.ops.ResizeWithCropOrPadOp
-import org.tensorflow.lite.support.image.ops.Rot90Op
+import java.io.IOException
+import java.nio.ByteBuffer
+import java.nio.ByteOrder
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
-import kotlin.random.Random
 
 class ScanActivity : AppCompatActivity() {
     private lateinit var binding : ActivityScanBinding
-    private lateinit var bitmapBuffer: Bitmap
 
     private val executor = Executors.newSingleThreadExecutor()
-    private val permissions = listOf(Manifest.permission.CAMERA)
 
     private val GALLERY_REQUEST_CODE = 123
+    private lateinit var interpreter : Interpreter
+    private lateinit var appPermissions: AppPermissions
 
     @SuppressLint("IntentReset")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,45 +46,125 @@ class ScanActivity : AppCompatActivity() {
         binding = ActivityScanBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+        appPermissions = AppPermissions()
 
+        initMLModel()
         btnBack()
 
         binding.btnFile.setOnClickListener {
-            if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)
-            == PackageManager.PERMISSION_GRANTED) {
+            if (appPermissions.isStorageOk(this)) {
                 val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
                 intent.type = "image/*"
                 val mimeTypes = arrayOf("image/jpeg", "image/png", "image/jpg")
                 intent.putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes)
                 intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                Log.i(TAG, "onCreate: onresult launched")
                 onresult.launch(intent)
             } else {
-                requestPermission.launch(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                Toast.makeText(this, "Please Enable Storage Permission", Toast.LENGTH_SHORT).show()
+                appPermissions.requestStoragePermission(this)
             }
         }
     }
 
-    // to get permission
-    private val requestPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) {granted ->
-        if(granted) {
-            takePicturePreview.launch(null)
-        } else {
-            Toast.makeText(this@ScanActivity, getString(R.string.permission_denied), Toast.LENGTH_SHORT).show()
-        }
-    }
+    private fun initMLModel() {
+        val conditions = CustomModelDownloadConditions.Builder()
+            .requireWifi()  // Also possible: .requireCharging() and .requireDeviceIdle()
+            .build()
+        FirebaseModelDownloader.getInstance()
+            .getModel("ModelPneuxFinal", DownloadType.LOCAL_MODEL,
+                conditions)
+            .addOnSuccessListener { model: CustomModel? ->
+                Log.i(TAG, "initMLModel: Model loaded successfully")
 
-    // image previews
-    private val takePicturePreview = registerForActivityResult(ActivityResultContracts.TakePicturePreview()) {bitmap ->
-        if (bitmap != null) {
-            binding.imgScan.setImageBitmap(bitmap)
-            outputGenerator(bitmap)
-        }
+                val modelFile = model?.file
+                if (modelFile != null) {
+                    interpreter = Interpreter(modelFile)
+                }
+            }
     }
 
     //get image from gallery
     private val onresult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {result ->
         Log.i(TAG, "This is the result: ${result.data} ${result.resultCode}")
-        onResultReceived(GALLERY_REQUEST_CODE)
+        onResultReceived(GALLERY_REQUEST_CODE, result)
+    }
+
+    private fun onResultReceived(requestCode: Int, result: ActivityResult?) {
+        when(requestCode) {
+            GALLERY_REQUEST_CODE ->{
+                if(result?.resultCode == Activity.RESULT_OK) {
+                    result.data?.data?.let { uri ->
+                        Log.i(TAG, "onResultReceived: $uri")
+                        val bitmap = BitmapFactory.decodeStream(contentResolver.openInputStream(uri))
+                        binding.imgScan.setImageBitmap(bitmap)
+                        binding.pbScanLoading.visibility = View.VISIBLE
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            binding.pbScanLoading.visibility = View.GONE
+                            outputGenerator(bitmap)
+                        },2000)
+                    }
+                } else {
+                    Log.e(TAG, "onResultReceived: error in selecting image")
+                }
+            }
+        }
+    }
+
+    private fun outputGenerator(bitmap: Bitmap) {
+        val newBitmap = Bitmap.createScaledBitmap(bitmap, 150, 150, true)
+        val input = ByteBuffer.allocateDirect(150*150*3*4).order(ByteOrder.nativeOrder())
+        for (y in 0 until 150) {
+            for (x in 0 until 150) {
+                val px = newBitmap.getPixel(x, y)
+
+                // Get channel values from the pixel value.
+                val r = Color.red(px)
+                val g = Color.green(px)
+                val b = Color.blue(px)
+
+                // Normalize channel values to [-1.0, 1.0]. This requirement depends on the model.
+                // For example, some models might require values to be normalized to the range
+                // [0.0, 1.0] instead.
+                val rf = (r - 127) / 255f
+                val gf = (g - 127) / 255f
+                val bf = (b - 127) / 255f
+
+                input.putFloat(rf)
+                input.putFloat(gf)
+                input.putFloat(bf)
+            }
+        }
+
+        val bufferSize = 1 * java.lang.Float.SIZE / java.lang.Byte.SIZE
+        val modelOutput = ByteBuffer.allocateDirect(bufferSize).order(ByteOrder.nativeOrder())
+        interpreter.run(input, modelOutput)
+
+        modelOutput.rewind()
+        val probabilities = modelOutput.asFloatBuffer()
+        try {
+            probabilities.get().let { acc ->
+                if(acc < 0.05) {
+                    // Tidak Normal
+                    Log.i(TAG, "outputGenerator: Tidak Normal dan $acc")
+                    val intent = Intent(this, ResultActivity::class.java)
+                    intent.putExtra("EXTRA_RESULT", "Tidak Normal")
+                    intent.putExtra("EXTRA_PROB", acc)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    startActivity(intent)
+                } else {
+                    // Normal
+                    Log.i(TAG, "outputGenerator: Normal dan $acc")
+                    val intent = Intent(this, ResultActivity::class.java)
+                    intent.putExtra("EXTRA_RESULT", "Normal")
+                    intent.putExtra("EXTRA_PROB", acc)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    startActivity(intent)
+                }
+            }
+        } catch (e: IOException) {
+            Log.e(TAG, "outputGenerator: Error generating output")
+        }
     }
 
     private fun btnBack() {
@@ -101,22 +181,10 @@ class ScanActivity : AppCompatActivity() {
             awaitTermination(1000, TimeUnit.MILLISECONDS)
         }
 
-        // Release TFLite resources.
-        tflite.close()
-        nnApiDelegate.close()
-
         super.onDestroy()
-    }
-
-    /** Convenience method used to check if all permissions required by this app are granted */
-    private fun hasPermissions(context: Context) = permissions.all {
-        ContextCompat.checkSelfPermission(context, it) == PackageManager.PERMISSION_GRANTED
     }
 
     companion object {
         private val TAG = ScanActivity::class.java.simpleName
-
-        private const val ACCURACY_THRESHOLD = 0.5f
-        private const val MODEL_PATH = "Pneu_Model_Fix.tflite"
     }
 }
